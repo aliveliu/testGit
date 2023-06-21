@@ -1,0 +1,10 @@
+.tab{
+  display: flex;
+}
+li{
+  flex: 1;
+}
+
+.avtive{
+  color: red;
+}
