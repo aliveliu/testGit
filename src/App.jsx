@@ -6,17 +6,23 @@ class App extends React.Component{
   constructor(){
     super()
     this.state = {
-      message: ['流行','经典','童谣']
+      message: ['流行','经典','童谣'],
+      tabindex: 0
     }
   }
-  
+  change(index){
+    this.setState({
+      tabindex: index
+    })
+  }
   render(){
-    const {message} = this.state
+    const {message,tabindex} = this.state
     return (
       
         <div>
           <Main></Main>
-          <Index message = {message}></Index>
+          <Index message = {message} change = {this.change.bind(this)}></Index>
+          <h2>{message[tabindex]}</h2>
         </div>
       
     )
